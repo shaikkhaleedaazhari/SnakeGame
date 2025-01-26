@@ -17,7 +17,7 @@ BLUE = (50, 153, 213)
 
 # Snake block size and speed
 BLOCK_SIZE = 20
-SPEED = 15
+SPEED = 15  # Starting speed
 
 # Initialize screen
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -47,6 +47,8 @@ def message(msg, color):
 
 # Main game function
 def game_loop():
+    global SPEED  # Declare SPEED as global so it can be modified
+
     game_over = False
     game_close = False
 
@@ -68,6 +70,7 @@ def game_loop():
             message("You lost! Press C to Play Again or Q to Quit", RED)
             show_score(snake_length - 1)
             pygame.display.update()
+            pygame.display.flip()  # Force an update of the display
 
             for event in pygame.event.get():
                 if event.type == pygame.KEYDOWN:
@@ -120,12 +123,17 @@ def game_loop():
         show_score(snake_length - 1)
 
         pygame.display.update()
+        pygame.display.flip()  # Force an update of the display
 
         # Check if the snake eats the food
         if x1 == food_x and y1 == food_y:
             food_x = round(random.randrange(0, WIDTH - BLOCK_SIZE) / BLOCK_SIZE) * BLOCK_SIZE
             food_y = round(random.randrange(0, HEIGHT - BLOCK_SIZE) / BLOCK_SIZE) * BLOCK_SIZE
             snake_length += 1
+
+        # Increase speed after every 5 points
+        if snake_length % 5 == 0 and SPEED < 30:  # Every 5 points, increase speed
+            SPEED += 1
 
         clock.tick(SPEED)
 

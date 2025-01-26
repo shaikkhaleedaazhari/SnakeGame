@@ -141,7 +141,6 @@ def game_loop():
     quit()
 
 if __name__ == "__main__":
-    game_loop(
-
+    game_loop()
 
 #this is end

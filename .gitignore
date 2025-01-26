@@ -41,3 +41,5 @@ Thumbs.db  # Windows
 
 # MySQL
 *.sqlite3
+
+passwords.txt

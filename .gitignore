@@ -1,0 +1,43 @@
+# Python bytecode files
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtual environment directories
+venv/
+env/
+ENV/
+.venv/
+.virtualenv/
+
+# Distribution/packaging files
+*.egg
+*.egg-info/
+dist/
+build/
+*.tar.gz
+*.whl
+
+# IDE or editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.iml
+
+# Operating system-specific files
+.DS_Store  # macOS
+Thumbs.db  # Windows
+
+# Log files
+*.log
+
+# Python coverage reports
+.coverage
+.coverage.*
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# MySQL
+*.sqlite3

@@ -144,7 +144,8 @@ if __name__ == "__main__":
     game_loop()
 
 <<<<<<< HEAD
-#this is for merge conflit
+#this is end----------this is for merge conflit
 =======
 
-features
+#this is end.....this is in the branch for conflit
+>>>>>>> features
